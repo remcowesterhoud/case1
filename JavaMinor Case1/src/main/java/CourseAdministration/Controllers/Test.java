@@ -25,28 +25,35 @@ public class Test {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     public String uploadFile(@FormDataParam("file") InputStream uploadedInputStream, @FormDataParam("file") FormDataContentDisposition fileDetail){
 
-        saveToDisk(uploadedInputStream, fileDetail);
+        String content = readFile(uploadedInputStream);
 
-        return "File saved successfully";
+        BufferedReader reader = new BufferedReader(new StringReader(content));
+        String line;
+        try {
+            while ((line = reader.readLine()) != null){
+                System.out.println("Line: " + line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return content;
     }
 
-    private void saveToDisk(InputStream uploadedInputStream, FormDataContentDisposition fileDetail){
+    private String readFile(InputStream uploadedInputStream){
+        try {
+            System.out.println("Total file size to read (in bytes): " + uploadedInputStream.available());
 
-        String uploadedFileLocation = "C://Users/Remco/Desktop/" + fileDetail.getFileName();
-
-        try{
-            OutputStream out = new FileOutputStream(new File(uploadedFileLocation));
-            int read = 0;
-            byte[] bytes = new byte[1024];
-
-            while ((read = uploadedInputStream.read(bytes)) != -1){
-                out.write(bytes, 0, read);
+            String fileContent = "";
+            int content;
+            while ((content = uploadedInputStream.read()) != -1){
+                fileContent += (char) content;
             }
-            out.flush();
-            out.close();
-        }
-        catch (IOException e){
+
+            return fileContent;
+        } catch (IOException e) {
             e.printStackTrace();
+            return "Something went wrong";
         }
     }
 }
