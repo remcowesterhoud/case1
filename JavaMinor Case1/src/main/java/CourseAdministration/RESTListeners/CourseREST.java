@@ -2,13 +2,10 @@ package CourseAdministration.RESTListeners;
 
 import CourseAdministration.Utils.CourseInstance.CourseParser;
 import CourseAdministration.Utils.DB.CourseDataHandler;
-import CourseAdministration.Utils.DB.DataHandler;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.InputStream;
@@ -27,7 +24,8 @@ public class CourseREST {
         String message = courseParser.readCourseInstanceFile(uploadedInputStream);
 
         CourseDataHandler dataHandler = new CourseDataHandler();
-        dataHandler.createCourseInstances(courseParser.getCourseInstances());
+        int rowsUpdated = dataHandler.createCourseInstances(courseParser.getCourseInstances());
+        message += "; " + rowsUpdated + " rows updated";
 
         return Response.ok(message).build();
     }
