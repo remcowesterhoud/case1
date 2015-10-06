@@ -1,5 +1,6 @@
-package CourseAdministration.Utils.StudentBuilder;
+package CourseAdministration.Utils.Directors;
 
+import CourseAdministration.Models.BVStudent;
 import CourseAdministration.Models.Student;
 
 import javax.ws.rs.core.MultivaluedMap;
@@ -23,14 +24,14 @@ public class StudentDirector {
     }
 
     public Student createBVStudent(MultivaluedMap<String, String> params){
-        BVStudentBuilder builder = new BVStudentBuilder();
-        builder.buildStudent();
-        builder.setFirstName(params.getFirst("firstName"));
-        builder.setLastName(params.getFirst("lastName"));
-        builder.setCompany(params.getFirst("company"));
-        builder.setDeparment(params.getFirst("department"));
-        builder.setQuotationNumber(Integer.parseInt(params.getFirst("quotationNumber")));
-        return builder.getStudent();
+        return new
+                BVStudent.BVStudentBuilder(0)
+                .firstName(params.getFirst("firstName"))
+                .lastName(params.getFirst("lastName"))
+                .company(params.getFirst("company"))
+                .department(params.getFirst("department"))
+                .quotationNumber(Integer.parseInt(params.getFirst("quotationNumber")))
+                .build();
     }
 
     public Student createPrivateStudent(MultivaluedMap<String, String> params){

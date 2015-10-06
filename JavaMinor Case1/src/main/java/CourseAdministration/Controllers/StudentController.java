@@ -3,7 +3,7 @@ package CourseAdministration.Controllers;
 import CourseAdministration.Models.BVStudent;
 import CourseAdministration.Models.Student;
 import CourseAdministration.Utils.DB.StudentDataHandler;
-import CourseAdministration.Utils.StudentBuilder.StudentDirector;
+import CourseAdministration.Utils.Directors.StudentDirector;
 
 import javax.ws.rs.core.MultivaluedMap;
 
