@@ -93,12 +93,11 @@ public class CourseDataHandler extends DataHandler {
             if (!exists) {
                 getDBConnection();
 
-                OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO COURSE_INSTANCE (ID, COURSE_CODE, START_DATE, DURATION) VALUES (?, ?, ?, ?)");
-                statement.setInt(1, 0); //ID gets overridden by Trigger in DB. Any value will do.
-                statement.setString(2, instance.getCourse().getCode());
+                OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO COURSE_INSTANCE (ID, COURSE_CODE, START_DATE, DURATION) VALUES (1, ?, ?, ?)"); //ID gets overwritten by Trigger
+                statement.setString(1, instance.getCourse().getCode());
                 DateFormat df = new SimpleDateFormat("dd/MMM/yyyy");
-                statement.setString(3, df.format(instance.getStartDate()));
-                statement.setInt(4, instance.getDuration());
+                statement.setString(2, df.format(instance.getStartDate()));
+                statement.setInt(3, instance.getDuration());
                 int count = statement.executeUpdate();
 
                 if (count > 0){

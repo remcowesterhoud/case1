@@ -20,13 +20,21 @@ public class CourseREST {
     @Path("/import")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     public Response importCourseInstances(@FormDataParam("file") InputStream uploadedInputStream, @FormDataParam("file") FormDataContentDisposition fileDetail){
-        CourseParser courseParser = new CourseParser();
-        String message = courseParser.readCourseInstanceFile(uploadedInputStream);
+        String fileName = fileDetail.getFileName();
+        int temp = fileName.lastIndexOf(".");
+        String extension = fileName.substring(temp);
 
-        CourseDataHandler dataHandler = new CourseDataHandler();
-        int rowsUpdated = dataHandler.createCourseInstances(courseParser.getCourseInstances());
-        message += "; " + rowsUpdated + " rows updated";
+        if (!extension.equals(".txt")){
+            return Response.ok("Uploaded file is not a .txt file").build();
+        }
+        else {
+            CourseParser courseParser = new CourseParser();
+            String message = courseParser.readCourseInstanceFile(uploadedInputStream);
+            CourseDataHandler dataHandler = new CourseDataHandler();
+            int rowsUpdated = dataHandler.createCourseInstances(courseParser.getCourseInstances());
+            message += "; " + rowsUpdated + " rows added";
 
-        return Response.ok(message).build();
+            return Response.ok(message).build();
+        }
     }
 }
