@@ -16,6 +16,13 @@ import java.io.InputStream;
 @Path("/courses")
 public class CourseREST {
 
+    @GET
+    @Path("/test")
+    public String test(){
+        return "test";
+    }
+
+
     @POST
     @Path("/import")
     @Consumes(MediaType.MULTIPART_FORM_DATA)

@@ -66,7 +66,12 @@ public class CourseParser {
                         lineNumber++;
                     }
                     catch (ArrayIndexOutOfBoundsException e){
-                        e.printStackTrace();
+                        if ((lineNumber % 5) == 4){
+                            lineNumber -= 4;
+                        }
+                        return "Invalid file format at line: " + lineNumber;
+                    }
+                    catch (NullPointerException e){
                         lineNumber -= 4;
                         return "Invalid file format at line: " + lineNumber;
                     }
@@ -78,7 +83,7 @@ public class CourseParser {
                     courseInstances.add(instance);
                 } else {
                     courseInstances.clear();
-                    return "Data invalid at line: " + lineNumber + "\nNo data has been added";
+                    return "Data invalid at line: " + lineNumber + "\nno data has been added";
                 }
             }
         }

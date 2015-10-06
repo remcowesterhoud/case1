@@ -1,4 +1,4 @@
-package Utils.CourseInstance;
+package CourseAdministrationTests.Utils.CourseInstance;
 
 import CourseAdministration.Models.Course;
 import CourseAdministration.Models.CourseInstance;
@@ -10,6 +10,8 @@ import org.junit.Test;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
+import static org.junit.Assert.assertFalse;
 
 /**
  * Created by Remco on 5-10-2015.
@@ -39,35 +41,35 @@ public class CourseInstanceValidatorTest {
         Course course = null;
         courseInstance.setCourse(course);
         boolean result = validator.validateCourseInstance(courseInstance);
-        Assert.assertFalse(result);
+        assertFalse(result);
     }
 
     @Test
     public void testValidateCourseInstanceCourseCodeEmpty(){
         course.setCode("");
         boolean result = validator.validateCourseInstance(courseInstance);
-        Assert.assertFalse(result);
+        assertFalse(result);
     }
 
     @Test
     public void testValidateCourseInstanceCourseTitleEmpty(){
         course.setTitle("");
         boolean result = validator.validateCourseInstance(courseInstance);
-        Assert.assertFalse(result);
+        assertFalse(result);
     }
 
     @Test
     public void testValidateCourseInstanceDurationSmall(){
         courseInstance.setDuration(0);
         boolean result = validator.validateCourseInstance(courseInstance);
-        Assert.assertFalse(result);
+        assertFalse(result);
     }
 
     @Test
     public void testValidateCourseInstanceDurationBig(){
         courseInstance.setDuration(6);
         boolean result = validator.validateCourseInstance(courseInstance);
-        Assert.assertFalse(result);
+        assertFalse(result);
     }
 
     @Test
@@ -75,6 +77,6 @@ public class CourseInstanceValidatorTest {
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         courseInstance.setStartDate(df.parse("08/10/2015"));
         boolean result = validator.validateCourseInstance(courseInstance);
-        Assert.assertFalse(result);
+        assertFalse(result);
     }
 }
