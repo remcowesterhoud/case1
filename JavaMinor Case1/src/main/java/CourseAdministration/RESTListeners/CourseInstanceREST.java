@@ -13,8 +13,8 @@ import java.io.InputStream;
 /**
  * Created by Remco on 5-10-2015.
  */
-@Path("/courses")
-public class CourseREST {
+@Path("/instances")
+public class CourseInstanceREST {
 
     @POST
     @Path("/import")
@@ -29,7 +29,7 @@ public class CourseREST {
         }
         else {
             CourseParser courseParser = new CourseParser();
-            String message = courseParser.readCourseInstanceFile(uploadedInputStream);
+            String message = courseParser.parse(uploadedInputStream);
             CourseDataHandler dataHandler = new CourseDataHandler();
             int rowsUpdated = dataHandler.createCourseInstances(courseParser.getCourseInstances());
             message += "; " + rowsUpdated + " rows added";

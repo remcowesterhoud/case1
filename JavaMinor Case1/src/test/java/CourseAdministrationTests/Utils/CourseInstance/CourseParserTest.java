@@ -36,7 +36,7 @@ public class CourseParserTest {
                 "Startdatum: 21/10/2013";
         InputStream in = new ByteArrayInputStream(correct.getBytes(StandardCharsets.UTF_8));
 
-        String result = parser.readCourseInstanceFile(in);
+        String result = parser.parse(in);
         assertThat(result, equalTo("Data added succesfully"));
     }
 
@@ -53,7 +53,7 @@ public class CourseParserTest {
                 "Startdatum: 21/10/2013";
         InputStream in = new ByteArrayInputStream(correct.getBytes(StandardCharsets.UTF_8));
 
-        String result = parser.readCourseInstanceFile(in);
+        String result = parser.parse(in);
         assertThat(result, equalTo("Data invalid at line: 3\nno data has been added"));
     }
 
@@ -70,7 +70,7 @@ public class CourseParserTest {
                 "Startdatum: 21/10/2013";
         InputStream in = new ByteArrayInputStream(correct.getBytes(StandardCharsets.UTF_8));
 
-        String result = parser.readCourseInstanceFile(in);
+        String result = parser.parse(in);
         assertThat(result, equalTo("Data invalid at line: 4\nno data has been added"));
     }
 
@@ -86,7 +86,7 @@ public class CourseParserTest {
                 "Startdatum: 21/10/2013";
         InputStream in = new ByteArrayInputStream(correct.getBytes(StandardCharsets.UTF_8));
 
-        String result = parser.readCourseInstanceFile(in);
+        String result = parser.parse(in);
         assertThat(result, equalTo("Invalid file format at line: 5"));
     }
 
@@ -102,7 +102,7 @@ public class CourseParserTest {
                 "Startdatum: 21/10/2013";
         InputStream in = new ByteArrayInputStream(correct.getBytes(StandardCharsets.UTF_8));
 
-        String result = parser.readCourseInstanceFile(in);
+        String result = parser.parse(in);
         assertThat(result, equalTo("Invalid file format at line: 1"));
     }
 }

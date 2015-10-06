@@ -27,7 +27,7 @@ public class CourseParser {
         lineNumber = 0;
     }
 
-    public String readCourseInstanceFile(InputStream in) {
+    public String parse(InputStream in) {
         try {
             String content = generateFileString(in);
             String parseMessage = parseFileString(content);
@@ -76,9 +76,7 @@ public class CourseParser {
                         return "Invalid file format at line: " + lineNumber;
                     }
                 }
-
-                CourseInstance instance = null;
-                instance = createCourseInstance(instanceData);
+                CourseInstance instance = createCourseInstance(instanceData);
                 if (validateInstance(instance)) {
                     courseInstances.add(instance);
                 } else {
