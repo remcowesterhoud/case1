@@ -89,7 +89,7 @@ public class CourseDataHandler extends DataHandler {
     public boolean createCourseInstance(CourseInstance instance){
         try{
             //If Course instance does not exist add it too the DB
-            boolean exists = courseInstanceInstanceExists(instance);
+            boolean exists = courseInstanceExists(instance);
             if (!exists) {
                 getDBConnection();
 
@@ -111,7 +111,7 @@ public class CourseDataHandler extends DataHandler {
         return false;
     }
 
-    public boolean courseInstanceInstanceExists(CourseInstance instance){
+    public boolean courseInstanceExists(CourseInstance instance){
         try {
             getDBConnection();
             OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("SELECT * FROM COURSE_INSTANCE WHERE COURSE_CODE = ? AND START_DATE = ? AND DURATION = ?");
@@ -131,8 +131,41 @@ public class CourseDataHandler extends DataHandler {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
-        return false;
     }
 
+    public boolean courseInstanceExists(int id){
+        try{
+            getDBConnection();
+            OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("SELECT * FROM COURSE_INSTANCE WHERE ID = ?");
+            statement.setInt(1, id);
+            ResultSet result = statement.executeQuery();
+
+            boolean exists = result.next();
+            if (exists){
+                return true;
+            }
+            else {
+                return false;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public ResultSet test(Course course){
+        try {
+            getDBConnection();
+            OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO COURSE (CODE, TITLE) VALUES (?, ?)");
+            statement.setString(1, course.getCode());
+            statement.setString(2, course.getTitle());
+            return statement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

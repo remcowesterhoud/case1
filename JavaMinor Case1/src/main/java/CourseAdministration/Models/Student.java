@@ -8,10 +8,8 @@ public abstract class Student {
     private int id;
     private String firstName, lastName;
 
-    public Student(int id, String firstName, String lastName) {
+    public Student(int id) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
     }
 
     public  int getId() {
