@@ -2,7 +2,6 @@ package CourseAdministration.Controllers;
 
 import CourseAdministration.Models.Course;
 import CourseAdministration.Models.CourseInstance;
-import CourseAdministration.Utils.DB.CourseDataHandler;
 import CourseAdministration.Utils.DB.CourseInstanceDataHandler;
 
 import java.sql.ResultSet;

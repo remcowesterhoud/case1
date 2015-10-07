@@ -1,6 +1,6 @@
 package CourseAdministrationTests.Utils.CourseInstance;
 
-import CourseAdministration.Utils.CourseInstance.CourseParser;
+import CourseAdministration.Utils.CourseInstance.CourseInstanceParser;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,13 +14,13 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Remco on 6-10-2015.
  */
-public class CourseParserTest {
+public class CourseInstanceParserTest {
 
-    private CourseParser parser;
+    private CourseInstanceParser parser;
 
     @Before
     public void setup(){
-        parser = new CourseParser();
+        parser = new CourseInstanceParser();
     }
 
     @Test

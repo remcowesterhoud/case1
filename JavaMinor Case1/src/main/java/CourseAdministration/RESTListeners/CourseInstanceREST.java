@@ -3,11 +3,10 @@ package CourseAdministration.RESTListeners;
 import CourseAdministration.Controllers.CourseInstanceController;
 import CourseAdministration.Controllers.EnrollmentController;
 import CourseAdministration.Models.CourseInstance;
-import CourseAdministration.Utils.CourseInstance.CourseParser;
-import CourseAdministration.Utils.DB.CourseDataHandler;
+import CourseAdministration.Utils.CourseInstance.CourseInstanceParser;
+import CourseAdministration.Utils.DB.CourseInstanceDataHandler;
 import CourseAdministration.Utils.Paths;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.sun.jersey.core.header.FormDataContentDisposition;
@@ -53,10 +52,10 @@ public class CourseInstanceREST {
             return Response.ok("Uploaded file is not a .txt file").build();
         }
         else {
-            CourseParser courseParser = new CourseParser();
-            String message = courseParser.parse(uploadedInputStream);
-            CourseDataHandler dataHandler = new CourseDataHandler();
-            int rowsUpdated = dataHandler.createCourseInstances(courseParser.getCourseInstances());
+            CourseInstanceParser courseInstanceParser = new CourseInstanceParser();
+            String message = courseInstanceParser.parse(uploadedInputStream);
+            CourseInstanceDataHandler dataHandler = new CourseInstanceDataHandler();
+            int rowsUpdated = dataHandler.createCourseInstances(courseInstanceParser.getCourseInstances());
             message += "; " + rowsUpdated + " rows added";
 
             return Response.ok(message).build();

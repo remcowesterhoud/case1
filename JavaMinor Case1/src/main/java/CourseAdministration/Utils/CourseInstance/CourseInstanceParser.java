@@ -17,12 +17,12 @@ import java.util.HashMap;
 /**
  * Created by Remco on 5-10-2015.
  */
-public class CourseParser {
+public class CourseInstanceParser {
 
     private ArrayList<CourseInstance> courseInstances;
     private int lineNumber;
 
-    public CourseParser() {
+    public CourseInstanceParser() {
         courseInstances = new ArrayList<CourseInstance>();
         lineNumber = 0;
     }

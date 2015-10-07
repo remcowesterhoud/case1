@@ -3,7 +3,6 @@ package CourseAdministrationTests.Utils.CourseInstance;
 import CourseAdministration.Models.Course;
 import CourseAdministration.Models.CourseInstance;
 import CourseAdministration.Utils.CourseInstance.CourseInstanceValidator;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 

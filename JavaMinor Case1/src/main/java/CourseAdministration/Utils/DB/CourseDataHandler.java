@@ -1,15 +1,10 @@
 package CourseAdministration.Utils.DB;
 
 import CourseAdministration.Models.Course;
-import CourseAdministration.Models.CourseInstance;
 import oracle.jdbc.OraclePreparedStatement;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by Remco on 5-10-2015.

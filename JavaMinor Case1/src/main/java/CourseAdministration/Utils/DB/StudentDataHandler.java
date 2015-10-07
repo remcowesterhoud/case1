@@ -6,7 +6,6 @@ import oracle.jdbc.OraclePreparedStatement;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  * Created by Remco on 6-10-2015.
