@@ -4,6 +4,8 @@ import CourseAdministration.Models.BVStudent;
 import CourseAdministration.Models.Student;
 
 import javax.ws.rs.core.MultivaluedMap;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 
 /**
@@ -32,6 +34,18 @@ public class StudentDirector {
                 .company(params.getFirst("company"))
                 .department(params.getFirst("department"))
                 .quotationNumber(Integer.parseInt(params.getFirst("quotationNumber")))
+                .build();
+    }
+
+    public Student createBVStudent(ResultSet resultSet) throws SQLException{
+        resultSet.next();
+        return new
+                BVStudent.BVStudentBuilder(resultSet.getInt("ID"))
+                .firstName(resultSet.getString("FIRST_NAME"))
+                .lastName(resultSet.getString("LAST_NAME"))
+                .company(resultSet.getString("COMPANY"))
+                .department(resultSet.getString("DEPARTMENT"))
+                .quotationNumber(resultSet.getInt("QUOTATION_NUMBER"))
                 .build();
     }
 

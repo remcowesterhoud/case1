@@ -55,7 +55,7 @@ public class CourseDataHandler extends DataHandler {
     public ResultSet getCourseInstance(int id){
         try {
             getDBConnection();
-            OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("SELECT * FROM COURSE_INSTANCE WHERE ID = ?");
+            OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("SELECT * FROM COURSE_INSTANCE INNER JOIN COURSE ON COURSE.CODE = COURSE_INSTANCE.COURSE_CODE WHERE ID = ?");
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
             return result;

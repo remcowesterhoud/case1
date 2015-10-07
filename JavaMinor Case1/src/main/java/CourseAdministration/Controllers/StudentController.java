@@ -6,6 +6,8 @@ import CourseAdministration.Utils.DB.StudentDataHandler;
 import CourseAdministration.Utils.Directors.StudentDirector;
 
 import javax.ws.rs.core.MultivaluedMap;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * Created by Remco on 6-10-2015.
@@ -32,8 +34,15 @@ public class StudentController {
         }
     }
 
-    public int findStudentID(Student student){
+    public Student getStudent(int id){
         StudentDataHandler dataHandler = new StudentDataHandler();
-        return dataHandler.findStudentID(student);
+        ResultSet resultSet = dataHandler.getStudent(id);
+        StudentDirector director = new StudentDirector();
+        try{
+            return director.createBVStudent(resultSet);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

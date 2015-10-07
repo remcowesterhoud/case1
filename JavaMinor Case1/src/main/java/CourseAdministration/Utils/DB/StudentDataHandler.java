@@ -79,20 +79,15 @@ public class StudentDataHandler extends DataHandler{
         }
     }
 
-    public int findStudentID(Student student){
+    public ResultSet getStudent(int id){
         try{
             getDBConnection();
-            OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("SELECT ID FROM PERSON WHERE FIRST_NAME = ? AND LAST_NAME = ?");
-            statement.setString(1, student.getFirstName());
-            statement.setString(2, student.getLastName());
-            ResultSet result = statement.executeQuery();
-
-            int id = result.getInt("ID");
-            return id;
-
+            OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("SELECT * FROM PERSON INNER JOIN STUDENT_BV ON PERSON.ID = STUDENT_BV.PERSON_ID WHERE ID = ?");
+            statement.setInt(1, id);
+            return statement.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
-            return 0;
+            return null;
         }
     }
 }

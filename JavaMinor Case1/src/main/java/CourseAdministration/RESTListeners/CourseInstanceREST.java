@@ -1,8 +1,11 @@
 package CourseAdministration.RESTListeners;
 
+import CourseAdministration.Controllers.CourseInstanceController;
 import CourseAdministration.Controllers.EnrollmentController;
+import CourseAdministration.Models.CourseInstance;
 import CourseAdministration.Utils.CourseInstance.CourseParser;
 import CourseAdministration.Utils.DB.CourseDataHandler;
+import com.google.gson.Gson;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 
@@ -17,6 +20,21 @@ import java.io.InputStream;
  */
 @Path("/instances")
 public class CourseInstanceREST {
+
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCourseInstance(@PathParam("id") int id){
+        CourseInstanceController controller = new CourseInstanceController();
+        CourseInstance instance = controller.getCourseInstance(id);
+        if (instance != null) {
+            Gson gson = new Gson();
+            return Response.ok(gson.toJson(instance)).build();
+        }
+        else {
+            return Response.ok("Instance not found").build();
+        }
+    }
 
     @POST
     @Path("/import")
