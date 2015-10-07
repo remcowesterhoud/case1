@@ -5,7 +5,9 @@ package CourseAdministration.Utils;
  */
 public enum Paths {
     URL("http://localhost:8081/"),
-    STUDENT("students/");
+    STUDENT("students/"),
+    INSTANCE("instances/"),
+    COURSE("courses/");
 
     private final String URI;
     Paths(String URI){

@@ -98,7 +98,7 @@ public class CourseParser {
         Date startDate = df.parse(instanceData.get("Startdatum"));
         String durationString = instanceData.get("Duur");
         int duration = Integer.parseInt(durationString.substring(0, durationString.indexOf(" ")));
-        CourseInstance instance = new CourseInstance(course, startDate, duration);
+        CourseInstance instance = new CourseInstance(0, course, startDate, duration);
         return instance;
     }
 

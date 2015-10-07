@@ -4,6 +4,7 @@ import CourseAdministration.Models.BVStudent;
 import CourseAdministration.Models.Student;
 
 import javax.ws.rs.core.MultivaluedMap;
+import java.util.HashMap;
 
 /**
  * Created by Remco on 6-10-2015.

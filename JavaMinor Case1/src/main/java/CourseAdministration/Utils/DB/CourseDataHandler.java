@@ -155,17 +155,4 @@ public class CourseDataHandler extends DataHandler {
             return false;
         }
     }
-
-    public ResultSet test(Course course){
-        try {
-            getDBConnection();
-            OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("INSERT INTO COURSE (CODE, TITLE) VALUES (?, ?)");
-            statement.setString(1, course.getCode());
-            statement.setString(2, course.getTitle());
-            return statement.executeQuery();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
 }

@@ -24,7 +24,7 @@ public class CourseParserTest {
     }
 
     @Test
-    public void testReadCourseInstaceFileCorrect(){
+    public void testReadCourseInstanceFileCorrect(){
         String correct = "Titel: Test Course 1 Correct\n" +
                 "Cursuscode: TC1C\n" +
                 "Duur: 5 dagen\n" +
@@ -41,7 +41,7 @@ public class CourseParserTest {
     }
 
     @Test
-    public void testReadCourseInstaceFileDurationInvalid(){
+    public void testReadCourseInstanceFileDurationInvalid(){
         String correct = "Titel: Test Course 1 Correct\n" +
                 "Cursuscode: TC1C\n" +
                 "Duur: 8 dagen\n" +
@@ -58,7 +58,7 @@ public class CourseParserTest {
     }
 
     @Test
-    public void testReadCourseInstaceFileStartDateInvalid(){
+    public void testReadCourseInstanceFileStartDateInvalid(){
         String correct = "Titel: Test Course 1 Correct\n" +
                 "Cursuscode: TC1C\n" +
                 "Duur: 5 dagen\n" +
@@ -75,7 +75,7 @@ public class CourseParserTest {
     }
 
     @Test
-    public void testReadCourseInstaceFileFormatInvalidMissingLine(){
+    public void testReadCourseInstanceFileFormatInvalidMissingLine(){
         String correct = "Titel: Test Course 1 Correct\n" +
                 "Cursuscode: TC1C\n" +
                 "Duur: 5 dagen\n" +
@@ -91,11 +91,12 @@ public class CourseParserTest {
     }
 
     @Test
-    public void testReadCourseInstaceFileFormatInvalidNoData(){
+    public void testReadCourseInstanceFileFormatInvalidNoData(){
         String correct = "Titel:\n" +
                 "Cursuscode: TC1C\n" +
                 "Duur: 5 dagen\n" +
                 "Startdatum: 14/10/2013\n" +
+                "\n" +
                 "Titel: Test Course 2 Correct\n" +
                 "Cursuscode: TC2C\n" +
                 "Duur: 5 dagen\n" +

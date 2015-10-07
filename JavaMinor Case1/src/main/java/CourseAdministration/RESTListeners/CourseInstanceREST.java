@@ -1,5 +1,6 @@
 package CourseAdministration.RESTListeners;
 
+import CourseAdministration.Controllers.EnrollmentController;
 import CourseAdministration.Utils.CourseInstance.CourseParser;
 import CourseAdministration.Utils.DB.CourseDataHandler;
 import com.sun.jersey.core.header.FormDataContentDisposition;
@@ -7,6 +8,7 @@ import com.sun.jersey.multipart.FormDataParam;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import java.io.InputStream;
 
@@ -36,5 +38,13 @@ public class CourseInstanceREST {
 
             return Response.ok(message).build();
         }
+    }
+
+    @POST
+    @Path("/{id}/enrollments")
+    @Consumes("application/x-www-form-urlencoded")
+    public Response createEnrollment(@PathParam("id") int id, MultivaluedMap<String, String> formParams){
+        EnrollmentController controller = new EnrollmentController();
+        return controller.createEnrollment(id, formParams);
     }
 }

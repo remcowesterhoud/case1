@@ -1,5 +1,7 @@
 package CourseAdministration.Models;
 
+import CourseAdministration.Utils.Paths;
+
 import java.util.Date;
 
 /**
@@ -7,14 +9,18 @@ import java.util.Date;
  */
 public class CourseInstance {
 
+    private String self;
+    private int id;
     private Course course;
     private Date startDate;
     private int duration;
 
-    public CourseInstance(Course course, Date startDate, int duration) {
+    public CourseInstance(int id, Course course, Date startDate, int duration) {
+        this.id = id;
         this.course = course;
         this.startDate = startDate;
         this.duration = duration;
+        this.self = Paths.URL.getURI() + Paths.INSTANCE.getURI() + id;
     }
 
     public Course getCourse() {

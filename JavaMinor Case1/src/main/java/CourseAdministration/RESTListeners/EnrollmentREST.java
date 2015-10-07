@@ -1,24 +1,31 @@
 package CourseAdministration.RESTListeners;
 
 import CourseAdministration.Controllers.EnrollmentController;
+import CourseAdministration.Models.Enrollment;
+import com.google.gson.Gson;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.core.MultivaluedMap;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 
 /**
- * Created by Remco on 6-10-2015.
+ * Created by Remco on 7-10-2015.
  */
 @Path("/enrollments")
 public class EnrollmentREST {
 
-    @POST
-    @Path("/create")
-    @Consumes("application/x-www-form-urlencoded")
-    public Response createEnrollment(MultivaluedMap<String, String> formParams){
+    @GET
+    @Path("/{week}/{year}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getEnrollmentsByWeekAndDay(@PathParam("week") int week, @PathParam("year") int year){
         EnrollmentController controller = new EnrollmentController();
-        return controller.createEnrollment(formParams);
+        ArrayList<Enrollment> enrollments = controller.getEnrollmentsByWeekAndYear(week, year);
+
+        Gson gson = new Gson();
+        return Response.ok(gson.toJson(enrollments)).build();
     }
 }
