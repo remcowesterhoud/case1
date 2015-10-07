@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc9a9fdd-f225-47dc-b455-62deb212ccdd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/CourseController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/CourseREST.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/DB/CourseDataHandler.java" afterPath="$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/DB/CourseDataHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/CourseInstanceController.java" afterPath="$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/CourseInstanceController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/CourseInstanceREST.java" afterPath="$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/CourseInstanceREST.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/StudentController.java" afterPath="$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/StudentController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/DB/StudentDataHandler.java" afterPath="$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/DB/StudentDataHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/Directors/StudentDirector.java" afterPath="$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/Directors/StudentDirector.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/StudentREST.java" afterPath="$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/StudentREST.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JavaMinor Case1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -117,21 +112,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CourseInstanceREST.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/CourseInstanceREST.java">
+      <file leaf-file-name="StudentREST.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/StudentREST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseREST.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/CourseREST.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3175">
-              <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.7825">
+              <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,42 +124,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CourseDataHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/DB/CourseDataHandler.java">
+      <file leaf-file-name="StudentController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="189" selection-start-line="57" selection-start-column="189" selection-end-line="57" selection-end-column="189" />
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
-                <marker date="1444213972240" expanded="true" signature="1417:1452" placeholder="SELECT * FRO..COURSE..." />
-                <marker date="1444213972240" expanded="true" signature="1850:1955" placeholder="SELECT * FRO..COURSE_INSTANCE..." />
-                <marker date="1444213972240" expanded="true" signature="2355:2401" placeholder="INSERT INTO ..." />
-                <marker date="1444213972240" expanded="true" signature="3182:3269" placeholder="INSERT INTO ..." />
-                <marker date="1444213972240" expanded="true" signature="4060:4147" placeholder="SELECT * FRO..COURSE_INSTANCE..." />
-                <marker date="1444213972240" expanded="true" signature="4948:4990" placeholder="SELECT * FRO..COURSE_INSTANCE..." />
+                <element signature="e#1743#1759#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CourseInstanceController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/CourseInstanceController.java">
+      <file leaf-file-name="StudentDataHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/DB/StudentDataHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="31" selection-end-column="9" />
+              <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/CourseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1444215608075" expanded="true" signature="787:880" placeholder="INSERT INTO ..." />
+                <marker date="1444215608075" expanded="true" signature="1625:1688" placeholder="INSERT INTO ..." />
+                <marker date="1444215608075" expanded="true" signature="2294:2353" placeholder="SELECT * FRO..PERSON..." />
+                <marker date="1444215608075" expanded="true" signature="3004:3095" placeholder="SELECT * FRO..PERSON..." />
+                <marker date="1444215608075" expanded="true" signature="3481:3757" placeholder="SELECT * FRO..COURSE_ENROLLMNENT..." />
+                <marker date="1444215608075" expanded="true" signature="3481:3758" placeholder="SELECT * FRO..COURSE_ENROLLMNENT..." />
               </folding>
             </state>
           </provider>
@@ -183,8 +156,8 @@
       <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/948256aa-f679-42f2-9916-d663b8575df0/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="93" />
+            <state vertical-scroll-proportion="-1.7">
+              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -251,16 +224,16 @@
         <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/Models/CourseInstance.java" />
         <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/Paths.java" />
         <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/Models/Course.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/DB/StudentDataHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/StudentController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/StudentREST.java" />
         <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/Directors/StudentDirector.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/948256aa-f679-42f2-9916-d663b8575df0/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/DB/CourseDataHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/CourseInstanceController.java" />
         <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/CourseInstanceREST.java" />
         <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/CourseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/CourseREST.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/948256aa-f679-42f2-9916-d663b8575df0/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/DB/StudentDataHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/StudentController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/StudentREST.java" />
       </list>
     </option>
   </component>
@@ -1647,15 +1620,15 @@
       <workItem from="1444122619975" duration="952000" />
       <workItem from="1444123636035" duration="18709000" />
       <workItem from="1444146120619" duration="2656000" />
-      <workItem from="1444197748498" duration="15166000" />
+      <workItem from="1444197748498" duration="16758000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77795000" />
+    <option name="totallyTimeSpent" value="79387000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1618" height="870" extended-state="6" />
+    <frame x="-9" y="-9" width="1618" height="870" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2046,34 +2019,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/DB/StudentDataHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
-          <folding>
-            <marker date="1444213115428" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1444213115428" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1444213115428" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..PERSON..." />
-            <marker date="1444213115428" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..PERSON..." />
-            <marker date="1444213115428" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..PERSON..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/EnrollmentREST.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="103" selection-start-line="23" selection-start-column="103" selection-end-line="23" selection-end-column="103" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/StudentREST.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="59" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2090,33 +2039,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/StudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77729255">
-          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/948256aa-f679-42f2-9916-d663b8575df0/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/DB/CourseDataHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.24745269">
           <caret line="57" column="189" selection-start-line="57" selection-start-column="189" selection-end-line="57" selection-end-column="189" />
           <folding>
-            <marker date="1444213972240" expanded="true" signature="1417:1452" placeholder="SELECT * FRO..COURSE..." />
-            <marker date="1444213972240" expanded="true" signature="1850:1955" placeholder="SELECT * FRO..COURSE_INSTANCE..." />
-            <marker date="1444213972240" expanded="true" signature="2355:2401" placeholder="INSERT INTO ..." />
-            <marker date="1444213972240" expanded="true" signature="3182:3269" placeholder="INSERT INTO ..." />
-            <marker date="1444213972240" expanded="true" signature="4060:4147" placeholder="SELECT * FRO..COURSE_INSTANCE..." />
-            <marker date="1444213972240" expanded="true" signature="4948:4990" placeholder="SELECT * FRO..COURSE_INSTANCE..." />
+            <marker date="1444213972240" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..COURSE..." />
+            <marker date="1444213972240" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..COURSE_INSTANCE..." />
+            <marker date="1444213972240" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1444213972240" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1444213972240" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..COURSE_INSTANCE..." />
+            <marker date="1444213972240" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..COURSE_INSTANCE..." />
           </folding>
         </state>
       </provider>
@@ -2131,7 +2064,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/CourseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.49490538">
           <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2141,7 +2074,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/CourseInstanceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.5691412">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="31" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2151,8 +2084,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/CourseREST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3175">
+        <state vertical-scroll-proportion="0.7671034">
           <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/948256aa-f679-42f2-9916-d663b8575df0/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/Utils/DB/StudentDataHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+          <folding>
+            <marker date="1444215608075" expanded="true" signature="787:880" placeholder="INSERT INTO ..." />
+            <marker date="1444215608075" expanded="true" signature="1625:1688" placeholder="INSERT INTO ..." />
+            <marker date="1444215608075" expanded="true" signature="2294:2353" placeholder="SELECT * FRO..PERSON..." />
+            <marker date="1444215608075" expanded="true" signature="3004:3095" placeholder="SELECT * FRO..PERSON..." />
+            <marker date="1444215608075" expanded="true" signature="3481:3757" placeholder="SELECT * FRO..COURSE_ENROLLMNENT..." />
+            <marker date="1444215608075" expanded="true" signature="3481:3758" placeholder="SELECT * FRO..COURSE_ENROLLMNENT..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/Controllers/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="e#1743#1759#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CourseAdministration/RESTListeners/StudentREST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7825">
+          <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

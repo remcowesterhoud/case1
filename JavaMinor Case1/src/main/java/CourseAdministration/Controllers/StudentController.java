@@ -1,6 +1,8 @@
 package CourseAdministration.Controllers;
 
 import CourseAdministration.Models.BVStudent;
+import CourseAdministration.Models.Course;
+import CourseAdministration.Models.CourseInstance;
 import CourseAdministration.Models.Student;
 import CourseAdministration.Utils.DB.StudentDataHandler;
 import CourseAdministration.Utils.Directors.StudentDirector;
@@ -8,6 +10,7 @@ import CourseAdministration.Utils.Directors.StudentDirector;
 import javax.ws.rs.core.MultivaluedMap;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Created by Remco on 6-10-2015.
@@ -41,6 +44,24 @@ public class StudentController {
         try{
             return director.createBVStudent(resultSet);
         } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public ArrayList<CourseInstance> getCourseInstances(int id){
+        ArrayList<CourseInstance> instances = new ArrayList<CourseInstance>();
+        StudentDataHandler dataHandler = new StudentDataHandler();
+        ResultSet resultSet = dataHandler.getCourseInstances(id);
+        try{
+            while (resultSet.next()) {
+                Course course = new Course(resultSet.getString("CODE"), resultSet.getString("TITLE"));
+                CourseInstance instance = new CourseInstance(id, course, resultSet.getDate("START_DATE"), resultSet.getInt("DURATION"));
+                instances.add(instance);
+            }
+            return instances;
+        }
+        catch (SQLException e){
             e.printStackTrace();
             return null;
         }

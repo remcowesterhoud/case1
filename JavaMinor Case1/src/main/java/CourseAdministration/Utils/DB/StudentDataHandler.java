@@ -90,4 +90,19 @@ public class StudentDataHandler extends DataHandler{
             return null;
         }
     }
+
+    public ResultSet getCourseInstances(int id){
+        try{
+            getDBConnection();
+            OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("SELECT * FROM COURSE_ENROLLMNENT " +
+                    "INNER JOIN COURSE_INSTANCE ON COURSE_INSTANCE.ID = COURSE_ENROLLMNENT.COURSE_INSTANCEID " +
+                    "INNER JOIN COURSE ON COURSE.CODE = COURSE_INSTANCE.COURSE_CODE " +
+                    "WHERE PERSONID = ?");
+            statement.setInt(1, id);
+            return statement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
