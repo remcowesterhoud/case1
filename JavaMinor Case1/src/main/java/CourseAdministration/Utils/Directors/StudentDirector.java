@@ -6,7 +6,6 @@ import CourseAdministration.Models.Student;
 import javax.ws.rs.core.MultivaluedMap;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
 
 /**
  * Created by Remco on 6-10-2015.

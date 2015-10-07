@@ -3,8 +3,8 @@ package CourseAdministration.Controllers;
 import CourseAdministration.Models.Course;
 import CourseAdministration.Models.CourseInstance;
 import CourseAdministration.Utils.DB.CourseDataHandler;
+import CourseAdministration.Utils.DB.CourseInstanceDataHandler;
 
-import javax.xml.transform.Result;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -17,12 +17,12 @@ import java.util.Date;
 public class CourseInstanceController {
 
     public boolean courseInstanceExists(int id){
-        CourseDataHandler dataHandler = new CourseDataHandler();
+        CourseInstanceDataHandler dataHandler = new CourseInstanceDataHandler();
         return dataHandler.courseInstanceExists(id);
     }
 
     public CourseInstance getCourseInstance(int id){
-        CourseDataHandler dataHandler = new CourseDataHandler();
+        CourseInstanceDataHandler dataHandler = new CourseInstanceDataHandler();
         ResultSet resultSet = dataHandler.getCourseInstance(id);
 
         try {
@@ -37,7 +37,7 @@ public class CourseInstanceController {
     }
 
     public ArrayList<CourseInstance> getCourseInstancesByWeekAndYear(int week, int year){
-        CourseDataHandler dataHandler = new CourseDataHandler();
+        CourseInstanceDataHandler dataHandler = new CourseInstanceDataHandler();
         ArrayList<CourseInstance> instances = new ArrayList<CourseInstance>();
 
         Calendar calendar = Calendar.getInstance();
