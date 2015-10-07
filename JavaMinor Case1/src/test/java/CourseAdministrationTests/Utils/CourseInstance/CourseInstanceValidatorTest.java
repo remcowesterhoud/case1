@@ -12,6 +12,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Remco on 5-10-2015.
@@ -33,7 +34,7 @@ public class CourseInstanceValidatorTest {
     @Test
     public void testValidateCourseInstanceSuccess(){
         boolean result = validator.validateCourseInstance(courseInstance);
-        Assert.assertTrue(result);
+        assertTrue(result);
     }
 
     @Test

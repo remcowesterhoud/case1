@@ -5,7 +5,11 @@ import CourseAdministration.Controllers.EnrollmentController;
 import CourseAdministration.Models.CourseInstance;
 import CourseAdministration.Utils.CourseInstance.CourseParser;
 import CourseAdministration.Utils.DB.CourseDataHandler;
+import CourseAdministration.Utils.Paths;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 
@@ -14,6 +18,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 /**
  * Created by Remco on 5-10-2015.
@@ -64,5 +69,27 @@ public class CourseInstanceREST {
     public Response createEnrollment(@PathParam("id") int id, MultivaluedMap<String, String> formParams){
         EnrollmentController controller = new EnrollmentController();
         return controller.createEnrollment(id, formParams);
+    }
+
+    @GET
+    @Path("/{week}/{year}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCourseInstancesByWeekAndYear(@PathParam("week") int week, @PathParam("year") int year){
+        CourseInstanceController controller = new CourseInstanceController();
+        ArrayList<CourseInstance> instances = controller.getCourseInstancesByWeekAndYear(week, year);
+        if (instances != null){
+            Gson gson = new Gson();
+            JsonElement jsonElement = gson.toJsonTree(instances);
+            JsonObject mainObject = new JsonObject();
+            JsonObject urlObject = new JsonObject();
+            urlObject.addProperty("next", Paths.URL.getURI() + Paths.INSTANCE.getURI() + (week + 1) + "/" + year); //Add next week URL
+            urlObject.addProperty("prev", Paths.URL.getURI() + Paths.INSTANCE.getURI() + (week - 1) + "/" + year); //Add previous week URL
+            mainObject.add("urls", urlObject);
+            mainObject.add("body", jsonElement);
+            return Response.ok(gson.toJson(mainObject)).build();
+        }
+        else{
+            return Response.ok("No instances found").build();
+        }
     }
 }

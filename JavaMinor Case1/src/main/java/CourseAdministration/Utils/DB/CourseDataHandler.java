@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Remco on 5-10-2015.
@@ -61,6 +62,22 @@ public class CourseDataHandler extends DataHandler {
             return result;
         }
         catch (SQLException e) {
+            return null;
+        }
+    }
+
+    public ResultSet getCourseInstancesByDate(Date startDate, Date endDate){
+        try {
+            getDBConnection();
+            OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("SELECT * FROM COURSE_INSTANCE " +
+                    "INNER JOIN COURSE ON COURSE.CODE = COURSE_INSTANCE.COURSE_CODE " +
+                    "WHERE START_DATE >= ? AND START_DATE < ?");
+            DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+            statement.setString(1, df.format(startDate));
+            statement.setString(2, df.format(endDate));
+            return statement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
