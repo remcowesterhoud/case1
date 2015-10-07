@@ -56,7 +56,7 @@ public class StudentController {
         try{
             while (resultSet.next()) {
                 Course course = new Course(resultSet.getString("CODE"), resultSet.getString("TITLE"));
-                CourseInstance instance = new CourseInstance(id, course, resultSet.getDate("START_DATE"), resultSet.getInt("DURATION"));
+                CourseInstance instance = new CourseInstance(resultSet.getInt("COURSE_INSTANCEID"), course, resultSet.getDate("START_DATE"), resultSet.getInt("DURATION"), resultSet.getInt("PRICE"));
                 instances.add(instance);
             }
             return instances;

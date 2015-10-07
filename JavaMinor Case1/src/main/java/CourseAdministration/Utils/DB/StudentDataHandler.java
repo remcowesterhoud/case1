@@ -97,7 +97,8 @@ public class StudentDataHandler extends DataHandler{
             OraclePreparedStatement statement = (OraclePreparedStatement) conn.prepareStatement("SELECT * FROM COURSE_ENROLLMNENT " +
                     "INNER JOIN COURSE_INSTANCE ON COURSE_INSTANCE.ID = COURSE_ENROLLMNENT.COURSE_INSTANCEID " +
                     "INNER JOIN COURSE ON COURSE.CODE = COURSE_INSTANCE.COURSE_CODE " +
-                    "WHERE PERSONID = ?");
+                    "WHERE PERSONID = ? " +
+                    "ORDER BY START_DATE ASC");
             statement.setInt(1, id);
             return statement.executeQuery();
         } catch (SQLException e) {

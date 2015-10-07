@@ -82,7 +82,7 @@ public class EnrollmentController {
                         .quotationNumber(result.getInt("QUOTATION_NUMBER"))
                         .build();
                 Course course = new Course(result.getString("CODE"), result.getString("TITLE"));
-                CourseInstance instance = new CourseInstance(result.getInt("INSTANCE_ID"), course, result.getDate("START_DATE"), result.getInt("DURATION"));
+                CourseInstance instance = new CourseInstance(result.getInt("INSTANCE_ID"), course, result.getDate("START_DATE"), result.getInt("DURATION"), result.getInt("PRICE"));
 
                 enrollments.add(new Enrollment(student, instance));
             }

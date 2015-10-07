@@ -28,7 +28,7 @@ public class CourseInstanceValidatorTest {
         validator = new CourseInstanceValidator();
         course = new Course("tst101", "Test Course");
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        courseInstance = new CourseInstance(0, course, df.parse("05/10/2015"), 5);
+        courseInstance = new CourseInstance(0, course, df.parse("05/10/2015"), 5, 1500);
     }
 
     @Test

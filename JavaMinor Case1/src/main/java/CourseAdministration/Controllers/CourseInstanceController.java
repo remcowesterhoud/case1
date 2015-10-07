@@ -28,7 +28,7 @@ public class CourseInstanceController {
         try {
             resultSet.next();
             Course course = new Course(resultSet.getString("CODE"), resultSet.getString("TITLE"));
-            CourseInstance instance = new CourseInstance(resultSet.getInt("ID"), course, resultSet.getDate("START_DATE"), resultSet.getInt("DURATION"));
+            CourseInstance instance = new CourseInstance(resultSet.getInt("ID"), course, resultSet.getDate("START_DATE"), resultSet.getInt("DURATION"), resultSet.getInt("PRICE"));
             return instance;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -53,7 +53,7 @@ public class CourseInstanceController {
             try {
                 while(resultSet.next()) {
                     Course course = new Course(resultSet.getString("CODE"), resultSet.getString("TITLE"));
-                    CourseInstance instance = new CourseInstance(resultSet.getInt("ID"), course, resultSet.getDate("START_DATE"), resultSet.getInt("DURATION"));
+                    CourseInstance instance = new CourseInstance(resultSet.getInt("ID"), course, resultSet.getDate("START_DATE"), resultSet.getInt("DURATION"), resultSet.getInt("PRICE"));
                     instances.add(instance);
                 }
                 return instances;

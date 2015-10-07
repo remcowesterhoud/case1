@@ -13,13 +13,14 @@ public class CourseInstance {
     private int id;
     private Course course;
     private Date startDate;
-    private int duration;
+    private int duration, price;
 
-    public CourseInstance(int id, Course course, Date startDate, int duration) {
+    public CourseInstance(int id, Course course, Date startDate, int duration, int price) {
         this.id = id;
         this.course = course;
         this.startDate = startDate;
         this.duration = duration;
+        this.price = price;
         this.self = Paths.URL.getURI() + Paths.INSTANCE.getURI() + id;
     }
 
